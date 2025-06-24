@@ -1,6 +1,6 @@
-import { Connection, PublicKey } from "@solana/web3.js"
-import axios from "axios"
-import dotenv from "dotenv"
+const { Connection, PublicKey } = require("@solana/web3.js")
+const axios = require("axios")
+const dotenv = require("dotenv")
 
 dotenv.config()
 const BACKEND = process.env.BACKEND_URL || "http://localhost:3000"
