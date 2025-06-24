@@ -10,7 +10,7 @@
     "server": "node src/server.js",
     "start:indexer": "node src/index.js",
     "start:server": "node src/server.js",
-    "start": "concurrently \"npm run start:indexer\" \"npm run start:server\""
+    "start": "concurrently \"yarn run start:indexer\" \"yarn run start:server\""
   },
   "devDependencies": {
     "concurrently": "^9.2.0",
