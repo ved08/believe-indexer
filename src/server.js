@@ -21,23 +21,17 @@ app.get("/", (req, res) => {
 app.post("/new-token", async (req, res) => {
     console.log(req.body)
     const { mint } = req.body
-    const response = (await axios.get(`https://lite-api.jup.ag/tokens/v1/token/${mint}`)).data
+    // const response = (await axios.get(`https://lite-api.jup.ag/tokens/v1/token/${mint}`)).data
 
-    console.log("Got response", response)
-    if (response.address) {
-        const { created_at } = response
-        await prisma.token.create({
-            data: {
-                mint,
-                created_at
-            }
-        })
-        console.log("added new token to DB")
-        res.send("Got data")
-    } else {
-        console.log(`Data for ${mint} not available`)
-        res.send("No data")
-    }
+    console.log("Got response", mint)
+    await prisma.token.create({
+        data: {
+            mint,
+            created_at: new Date()
+        }
+    })
+    console.log("added new token to DB")
+    res.send("Got data")
 })
 
 app.listen(process.env.PORT || 3000, () => { console.log("Server running on port") })
