@@ -3,7 +3,7 @@ const axios = require("axios")
 const dotenv = require("dotenv")
 
 dotenv.config()
-const BACKEND = process.env.BACKEND_URL || "http://localhost:3000"
+const BACKEND = process.env.BACKEND_URL || "https://believe-indexer-production.up.railway.app/"
 const publicKey = new PublicKey("5qWya6UjwWnGVhdSBL3hyZ7B45jbk6Byt1hwd7ohEGXE")
 const monitorBelieveTokens = async () => {
     console.log("Monitoring new believe tokens")
