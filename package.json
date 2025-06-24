@@ -10,9 +10,10 @@
     "server": "node src/server.js",
     "start:indexer": "node src/index.js",
     "start:server": "node src/server.js",
-    "start:both": "concurrently \"npm run start:indexer\" \"npm run start:server\""
+    "start": "concurrently \"npm run start:indexer\" \"npm run start:server\""
   },
   "devDependencies": {
+    "concurrently": "^9.2.0",
     "prisma": "^6.10.1"
   },
   "dependencies": {
