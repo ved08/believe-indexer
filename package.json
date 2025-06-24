@@ -2,6 +2,9 @@
   "name": "believe-indexer",
   "version": "1.0.0",
   "license": "MIT",
+  "engines": {
+    "node": "20.18.0"
+  },
   "scripts": {
     "dev": "node src/index.js",
     "server": "node src/server.js",
