@@ -30,7 +30,7 @@ const monitorBelieveTokens = async () => {
                         // if (response.address) {
                         // const tokenPrice = (await axios.get(`https://lite-api.jup.ag/price/v2?ids=${mint}`)).data.data[`${mint}`].price
                         // const { address, name, symbol, decimals, logoURI, tags, daily_volume, created_at } = response
-                        axios.post(`${BACKEND}/new-token`, {
+                        await axios.post(`${BACKEND}/new-token`, {
                             mint
                         })
                         // }
