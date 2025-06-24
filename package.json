@@ -1,0 +1,28 @@
+{
+  "name": "believe-indexer",
+  "version": "1.0.0",
+  "license": "MIT",
+  "scripts": {
+    "dev": "node src/index.js",
+    "server": "node src/server.js",
+    "start:indexer": "node src/index.js",
+    "start:server": "node src/server.js",
+    "start:both": "concurrently \"npm run start:indexer\" \"npm run start:server\""
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.3",
+    "@types/node": "^24.0.3",
+    "prisma": "^6.10.1",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.8.3"
+  },
+  "dependencies": {
+    "@prisma/client": "^6.10.1",
+    "@prisma/extension-accelerate": "^2.0.1",
+    "@solana/web3.js": "^1.98.2",
+    "axios": "^1.10.0",
+    "body-parser": "^2.2.0",
+    "dotenv": "^16.5.0",
+    "express": "^5.1.0"
+  }
+}
