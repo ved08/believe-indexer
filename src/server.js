@@ -24,14 +24,19 @@ app.post("/new-token", async (req, res) => {
     // const response = (await axios.get(`https://lite-api.jup.ag/tokens/v1/token/${mint}`)).data
 
     console.log("Got response", mint)
-    await prisma.token.create({
-        data: {
-            mint,
-            created_at: new Date()
-        }
-    })
-    console.log("added new token to DB")
-    res.send("Got data")
+    try {
+        await prisma.token.create({
+            data: {
+                mint,
+                created_at: new Date()
+            }
+        })
+        console.log("added new token to DB")
+        res.status(200).json({ "message": "Added to DB" })
+    } catch (e) {
+        console.log("DB Insert failed, ", e.message)
+        res.status(500).json({ error: "Db insertion failed" })
+    }
 })
 
 app.listen(process.env.PORT || 3000, () => { console.log("Server running on port") })

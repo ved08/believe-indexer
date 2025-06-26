@@ -46,27 +46,6 @@ const monitorBelieveTokens = async () => {
 }
 monitorBelieveTokens()
 
-const monitorTestWallet = async () => {
-    console.log("Monitoring the test wallet")
-    try {
-        const connection = new Connection(process.env.RPC_URL || "", {
-            wsEndpoint: process.env.WS_URL || ""
-        })
-
-        connection.onLogs(
-            new PublicKey("GkDVxN3GJ1b2w5dahGGCtzqD4NK9V4UobMsXFUS4Btwy"),
-            async (logs, ctx) => {
-                const signature = logs.signature
-                console.log("new tx: ", signature)
-            }
-        )
-    } catch (e) {
-        console.log(e)
-    }
-
-}
-
-monitorTestWallet()
 // (async () => {
 //     const connection = new Connection(process.env.RPC_URL || "", {
 //         wsEndpoint: process.env.WS_URL || ""
